@@ -1,0 +1,56 @@
+
+
+.wrapper-cell-load {
+    display: flex;
+    margin-bottom: 30px;
+  }
+  
+  @-webkit-keyframes placeHolderShimmer {
+    0% {
+      background-position: -468px 0;
+    }
+    100% {
+      background-position: 468px 0;
+    }
+  }
+  
+  @keyframes placeHolderShimmer {
+    0% {
+      background-position: -468px 0;
+    }
+    100% {
+      background-position: 468px 0;
+    }
+  }
+  .animated-background, .wrapper-cell .text-load-efec-line, .image-load-efex {
+    -webkit-animation-duration: 1.25s;
+            animation-duration: 1.25s;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-name: placeHolderShimmer;
+            animation-name: placeHolderShimmer;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+    background: #F6F6F6;
+    background: linear-gradient(to right, #e4e4e4 8%, #d0d0d0 18%, #dddddd 33%);
+    background-size: 800px 104px;
+    height: 96px;
+    position: relative;
+  }
+  
+  .wrapper-cell .image-load-efex {
+    height: 90px;
+    width: 90px;
+  }
+  
+  .wrapper-cell .text-load-efec {
+    margin-left: 20px;
+  }
+  
+  .wrapper-cell .text-load-efec-line {
+    height: 10px;
+    width: 230px;
+    margin: 4px 0;
+  }

@@ -1,0 +1,288 @@
+  
+  /**
+   * Tooltip Styles
+   */
+  
+  /* Add this attribute to the element that needs a tooltip */
+  [data-tooltip] {
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+  }
+  
+  /* Hide the tooltip content by default */
+  [data-tooltip]:before,
+  [data-tooltip]:after {
+    visibility: hidden;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=0);
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  /* Position tooltip above the element */
+  [data-tooltip]:before {
+    position: absolute;
+    bottom: 150%;
+    left: 50%;
+    margin-bottom: 5px;
+    margin-left: -80px;
+    padding: 7px;
+    width: 160px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    background-color: #000;
+    background-color: hsla(0, 0%, 20%, 0.9);
+    color: #fff;
+    content: attr(data-tooltip);
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.2;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  /* Triangle hack to make tooltip look like a speech bubble */
+  [data-tooltip]:after {
+    position: absolute;
+    bottom: 150%;
+    left: 50%;
+    margin-left: -5px;
+    width: 0;
+    border-top: 5px solid #000;
+    border-top: 5px solid hsla(0, 0%, 20%, 0.9);
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+    content: " ";
+    font-size: 0;
+    line-height: 0;
+  }
+  
+  /* Show tooltip content on hover */
+  [data-tooltip]:hover:before,
+  [data-tooltip]:hover:after {
+    visibility: visible;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=100);
+    opacity: 1;
+  }
+
+
+
+/* Check */
+/* CSS rules are kept repetitive so that you can get CSS rules for each button easily :) */
+/* CSS rules are kept repetitive so that you can get CSS rules for each button easily :) */
+
+
+.toggle-button-cover-switch
+{
+    display: table-cell;
+    position: relative;
+    width: 200px;
+    height: 140px;
+    box-sizing: border-box;
+}
+
+.button-cover-switch
+{
+    height: 100px;
+    margin: 20px;
+    background-color: #fff;
+    box-shadow: 0 10px 20px -8px #c5d6d6;
+    border-radius: 4px;
+}
+
+.button-cover-switch:before
+{
+    counter-increment: button-counter;
+    content: counter(button-counter);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    color: #d7e3e3;
+    font-size: 12px;
+    line-height: 1;
+    padding: 5px;
+}
+
+.button-cover-switch, .knobs, .layer
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.button-switch
+{
+    position: relative;
+    /* top: 50%; */
+    width: 74px;
+    height: 36px;
+    margin: 0 auto 0 auto;
+    overflow: hidden;
+}
+
+.button-switch.r, .button-switch.r .layer
+{
+    border-radius: 100px;
+}
+
+.button-switch.b2
+{
+    border-radius: 2px;
+}
+
+.checkbox
+{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.knobs
+{
+    z-index: 2;
+}
+
+.layer
+{
+    width: 100%;
+    background-color: #ebf7fc;
+    transition: 0.3s ease all;
+    z-index: 1;
+}
+
+.btn-switch-1 .checkbox:checked + .knobs:before
+{
+    content: 'NO';
+    left: 42px;
+    background-color: #f44336;
+}
+
+.btn-switch-1 .checkbox:checked ~ .layer
+{
+    background-color: #fcebeb;
+}
+
+.btn-switch-1 .knobs, .btn-switch-1 .knobs:before, .btn-switch-1 .layer
+{
+    transition: 0.3s ease all;
+}
+
+/* Button 2 */
+.btn-switch-2 .knobs:before, .btn-switch-2 .knobs:after
+{
+    content: 'SI';
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 20px;
+    height: 10px;
+    color: #fff;
+    font-size: 10px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1;
+    padding: 9px 4px;
+    background-color: #03A9F4;
+    border-radius: 50%;
+    transition: 0.3s ease all;
+}
+
+.btn-switch-2 .knobs:before
+{
+    content: 'SI';
+}
+
+.btn-switch-2 .knobs:after
+{
+    content: 'NO';
+}
+
+.btn-switch-2 .knobs:after
+{
+    right: -28px;
+    left: auto;
+    background-color: #F44336;
+}
+
+.btn-switch-2 .checkbox:checked + .knobs:before
+{
+    left: -28px;
+}
+
+.btn-switch-2 .checkbox:checked + .knobs:after
+{
+    right: 4px;
+}
+
+.btn-switch-2 .checkbox:checked ~ .layer
+{
+    background-color: #fcebeb;
+}
+
+/* Button 3 */
+.btn-switch-3 .knobs:before
+{
+    content: 'SI';
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 32px;
+    /* height: 25px; */
+    color: #fff;
+    font-size: 10px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1;
+    padding: 9px 4px;
+    background-color: #03A9F4;
+    border-radius: 50%;
+    transition: 0.3s ease all, left 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15);
+}
+
+.btn-switch-3 .checkbox:active + .knobs:before
+{
+    width: 46px;
+    border-radius: 100px;
+}
+
+.btn-switch-3 .checkbox:checked:active + .knobs:before
+{
+    margin-left: -26px;
+}
+
+.btn-switch-3 .checkbox:checked + .knobs:before
+{
+    content: 'NO';
+    left: 42px;
+    background-color: #F44336;
+}
+
+.btn-switch-3 .checkbox:checked ~ .layer
+{
+    background-color: #fcebeb;
+}
+
+#ytd-url {
+  display: block;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  padding: 10px 14px;
+  margin: 20px;
+  color: #fff;
+  font-size: 14px;
+  text-decoration: none;
+  background-color: #143240;
+  border-radius: 4px;
+  box-shadow: 0 10px 20px -5px rgba(20, 50, 64, 0.76);
+}
