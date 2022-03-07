@@ -1680,33 +1680,6 @@ canvas {
     margin-right: 8px;
 }
 
-.post-content blockquote {
-    border-top: 1px solid #e0e1e0;
-    border-bottom: 1px solid #e0e1e0;
-    font-size: 1.125rem;
-    font-style: italic;
-    padding: 1.25rem 0;
-    padding-right: 90px;
-    margin-bottom: 1.25rem;
-    position: relative;
-}
-
-.post-content blockquote span {
-    position: absolute;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    width: 80px;
-    height: 80px;
-    border-radius: 100%;
-    background: #5dbd53;
-    color: #fff;
-    font-size: 18px;
-    text-align: center;
-    line-height: 80px;
-}
-
 
 /* 17.3: Pagination */
 

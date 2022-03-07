@@ -83,7 +83,8 @@ class ServiceController extends Controller
 
         return view($this->views->create)
             ->with('route', 'admin.'.$this->action.'.store')
-            // ->with('icons', Icons::all())
+            ->with('singular_title',$this->singular_title)
+            ->with('icons', Icons::all())
             ->with('action', $this->action);
     }
 
@@ -98,25 +99,12 @@ class ServiceController extends Controller
         
         canAccessTo($this->permissions->create);
 
-        $path = $request->image->store('services');
-
-        if(Storage::disk('local')->exists($path)){
-            $file = Storage::disk('local')->get($path);
-            $filename = basename($path);
-            // dd($path,$filename, basename($path),  $request->input('image'));
-            Storage::disk('services')->put($filename, $file);
-
-            $request->merge([
-                'image' => $filename,
-            ]);
-        }
-
         $request->merge([
-            'short_description' => $request->input('title')
+            'created_by'        => auth()->user()->id,
+            'updated_by'        => auth()->user()->id,
         ]);
 
         $item = Service::create($request->all());
-        $item->image = $request->input('image');
         $item->save();
 
         return response()->json([
@@ -125,36 +113,8 @@ class ServiceController extends Controller
             'id'    => $item->id
         ]);
     }
+
     /**
-     * Upload files
-     * @param UploadFileServiceRequest
-     */
-    public function updoadFiles(UploadFileServiceRequest $request)
-    {
-        $path = $request->file->store('services');
-
-        if(Storage::disk('local')->exists($path)){
-            $file = Storage::disk('local')->get($path);
-            $filename = basename($path);
-            Storage::disk('services')->put($filename, $file);
-
-            ServiceContent::create([
-                'service_id'  => $request->input('service_id'),
-                'description' => $request->input('description'),
-                'image'             => $filename,
-                
-            ]);
-            return response()->json([
-                'message' => 'Imagen subida',
-                'action'  => 'create',
-            ]);
-        }
-        return response()->json([
-            'message' => 'Error al subir el archivo',
-            'action'  => 'store',
-        ],400);
-    }
-     /**
      * Edit an item
      *
      * @param $id
@@ -166,7 +126,7 @@ class ServiceController extends Controller
 
         viewExist($this->views->edit);
 
-        $item = Service::with('items')->find($id);
+        $item = Service::find($id);
 
         if($item == null){
             return response()->json([
@@ -176,6 +136,7 @@ class ServiceController extends Controller
 
         return view($this->views->edit)
             ->with('item', $item)
+            ->with('singular_title',$this->singular_title)
             ->with('route_upload', 'admin.'.$this->action.'.store.upload')
             ->with('icons', Icons::all())
             ->with('route', 'admin.'.$this->action.'.update')
@@ -200,21 +161,14 @@ class ServiceController extends Controller
             ],404);
         }
 
-        if ($request->image) {
-            $path = $request->image->store('services');
-    
-            if(Storage::disk('local')->exists($path)){
-                $file = Storage::disk('local')->get($path);
-                $filename = basename($path);
-                Storage::disk('services')->put($filename, $file);
-                $item->image    = $filename;
-            }
-        }
+      
         
+        $item->image    = $request->input('image');
         $item->title    = $request->input('title');
 
         $item->short_description= $request->input('short_description');
         $item->description= $request->input('description');
+        $item->updated_by= auth()->user()->id;
         $item->save();
 
         return response()->json([
@@ -223,31 +177,7 @@ class ServiceController extends Controller
             'id'    => $item->id
         ]);
     }
-    /**
-     * Destroy an item
-     *
-     * @param DestroyCourseRequest $request
-     * @return JsonResponse
-     */
-    public function removeItem($id)
-    {
-        $item = ServiceContent::find($id);
-        
-        if($item == null){
-            return response()->json([
-                'message'    => 'ítem no encontrado'
-            ],404);
-        }
 
-        $item->status = 'deleted';
-        $item->save();
-
-        return response()->json([
-            'message' => 'Eliminado',
-            'action'  => 'destroy',
-            'status'  => 'success'
-        ]);
-    }
     /**
      * Destroy an item
      *
@@ -266,8 +196,9 @@ class ServiceController extends Controller
             ],404);
         }
 
-        $item->status = 'deleted';
+        $item->deleted_by = auth()->user()->id;
         $item->save();
+        $item->delete();
 
         return response()->json([
             'message' => 'Eliminado',
@@ -285,7 +216,7 @@ class ServiceController extends Controller
 
         canAccessTo($this->permissions->delete);
 
-        $item = Service::find($request->input('id'));
+        $item = Service::withTrashed()->find($request->input('id'));
         
         if($item == null){
             return response()->json([
@@ -293,7 +224,8 @@ class ServiceController extends Controller
             ],404);
         }
 
-        $item->status = 'active';
+        $item->deleted_at = null;
+        $item->deleted_by = null;
         $item->save();
 
         return response()->json([

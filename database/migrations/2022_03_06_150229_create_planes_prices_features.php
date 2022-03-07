@@ -19,7 +19,6 @@ class CreatePlanesPricesFeatures extends Migration
             $table->string('description',3000)->nullable();
             $table->string('icon',1000)->nullable(true);
             $table->text('link')->nullable(true);
-
             $table->unsignedBigInteger('created_by');
             $table->unsignedBigInteger('updated_by')->nullable(true);
             $table->unsignedBigInteger('deleted_by')->nullable(true);

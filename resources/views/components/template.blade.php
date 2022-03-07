@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-    <title>Administración|Palora</title>
+    <title>Administración|Intelc</title>
 
     @yield('styles_cdn')
-    <link rel="icon" type="image/gif" href="{{ asset('img/logo-c1.png')}}">
+    <link rel="icon" type="image/gif" href="{{ asset('intelc/img/clogo.png')}}">
     <!-- General CSS Files -->
     {{--
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -153,7 +153,7 @@
         <div class="logo-header" >
           
           <a href="{{ route('admin.dashboard.index')}}" class="logo">
-            <img src="{{ asset('img/logo.svg') }}" alt="navbar brand" class="navbar-brand" style="width: 100px; height: 75px;">
+            <img src="{{ asset('intelc/img/logo.png') }}" alt="navbar brand" class="navbar-brand" style="width: 100px; height: 75px;">
             {{-- https://www.pngkey.com/maxpic/u2w7u2o0a9y3i1w7/ --}}
           </a>
           <button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">

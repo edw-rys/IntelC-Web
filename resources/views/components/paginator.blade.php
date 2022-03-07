@@ -1,30 +1,27 @@
 @if ($paginator->hasPages())
-    <div class="col-md-12">
-        <div class="pagination">
-            <ul>
-            {{-- <div class="pagination-items" aria-label="{{ __('Pagination Navigation') }}"> --}}
-                @if ($paginator->onFirstPage())
-                    <li><a href="javascript:void(0)"><i class="fa fa-angle-left"></i></a></li>
-                @else
-                    <li><a href="{{ $paginator->previousPageUrl() }}"><i class="fa fa-angle-left"></i></a></li>
-                @endif
+    <ul class="custom-pagination list-inline text-center text-uppercase mt-4" data-animate="fadeInUp" data-delay=".1">
+        {{-- <div class="pagination-items" aria-label="{{ __('Pagination Navigation') }}"> --}}
+        @if ($paginator->onFirstPage())
+            <li class="float-left disabled"><a href="javascript:void(0)"><i class="fas fa-caret-left"></i> Anterior</a>
+            </li>
+        @else
+            <li class="float-left disabled"><a href="{{ $paginator->previousPageUrl() }}"><i
+                        class="fas fa-caret-left"></i> Anterior</a></li>
+        @endif
 
-                @foreach ($paginator->links()->elements[0] as $page => $routeItem)
-                    @if ($page == $paginator->currentPage())
-                        <li><a href="javascript:void(0)">{{ $page }}</a></li>
-                    @else
-                    <li><a href="{{ $routeItem}}">{{ $page }}</a></li>
-                    {{-- <a href="{{ $routeItem}}" class="pagination-item">{{ $page }}</a> --}}
-                    @endif
-                    
-                @endforeach
+        @foreach ($paginator->links()->elements[0] as $page => $routeItem)
+            @if ($page == $paginator->currentPage())
+                <li><a href="#">{{ $page }}</a></li>
+            @else
+                <li><a href="{{ $routeItem }}">{{ $page }}</a></li>
+            @endif
+        @endforeach
 
-                @if ($paginator->hasMorePages())
-                    <li><a href="{{ $paginator->nextPageUrl() }}"><i class="fa fa-angle-right"></i></a></li>
-                @else
-                    <li><a href="javascript:void(0)"><i class="fa fa-angle-right"></i></a></li>
-                @endif
-            </ul>
-        </div>
-    </div>
+        @if ($paginator->hasMorePages())
+            <li class="float-right"><a href="{{ $paginator->nextPageUrl() }}">Siguiente <i
+                        class="fas fa-caret-right"></i></a></li>
+        @else
+            <li class="float-right"><a href="javascript:void(0)">Next <i class="fas fa-caret-right"></i></a></li>
+        @endif
+    </ul>
 @endif

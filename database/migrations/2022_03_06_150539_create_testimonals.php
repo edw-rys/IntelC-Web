@@ -22,7 +22,6 @@ class CreateTestimonals extends Migration
             $table->string('image',1000)->nullable(true);
             $table->text('video_url')->nullable(true);
             $table->text('content')->nullable(true);
-
             $table->unsignedBigInteger('created_by');
             $table->unsignedBigInteger('updated_by')->nullable(true);
             $table->unsignedBigInteger('deleted_by')->nullable(true);

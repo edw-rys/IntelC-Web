@@ -60,6 +60,14 @@ return [
             'driver' => 'local',
             'root' => public_path('files/images/services'),
         ],
+        'our-team' => [
+            'driver' => 'local',
+            'root' => public_path('files/images/our-team'),
+        ],
+        'blog' => [
+            'driver' => 'local',
+            'root' => public_path('files/images/blog'),
+        ],
         'obras' => [
             'driver' => 'local',
             'root' => public_path('files/images/obras'),

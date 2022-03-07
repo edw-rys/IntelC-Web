@@ -5,8 +5,7 @@ use App\Models\Role;
 use App\Models\RoleUser;
 use App\Models\User;
 use App\Models\Permission;
-
-
+use App\Models\Team;
 
 if (! function_exists('getIdByRole')) {
     /**
@@ -83,5 +82,14 @@ if (!function_exists('have_permission')) {
         }
         return false;
 
+    }
+}
+
+
+if (! function_exists('ourTeam')) {
+    
+    function ourTeam( )
+    {
+        return Team::all();
     }
 }

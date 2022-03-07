@@ -3,9 +3,14 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-
-class Service extends Model
+use Illuminate\Database\Eloquent\SoftDeletes;
+use OwenIt\Auditing\Contracts\Auditable as AuditableContract;
+use OwenIt\Auditing\Auditable;
+class Service extends Model implements AuditableContract
 {
+    use Auditable;
+    use SoftDeletes;
+
     protected $table = 'service';
     protected $fillable = [
         'title',
@@ -16,15 +21,17 @@ class Service extends Model
         'description',
         'video_url',
         'content',
-        'status',
+        'created_by',
+        'updated_by',
     ];
-    public function items()
+   
+    protected $appends = ['file_url', 'status'];
+    public function getStatusAttribute()
     {
-        return $this->hasMany(ServiceContent::class, 'service_id')->where('status', 'active');
+        return $this->deleted_at != null ? 'deleted' : 'active';
     }
-    protected $appends = ['file_url'];
     public function getFileUrlAttribute()
     {
-        return asset('').'files/images/services/'. $this->image;
+        return asset('').'/intelc/img/icons/'. $this->image;
     }
 }

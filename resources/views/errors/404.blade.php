@@ -1,23 +1,20 @@
-@extends('errors.templates.layout')
-@push('styles_add')
-    <link href='https://fonts.googleapis.com/css?family=Anton|Passion+One|PT+Sans+Caption' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="{{ asset('css/404.css')}}">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-@endpush
+@extends('layouts.template')
+
 @section('content')
-    <div class="wrapper"> 
-        <!-- CITY 404 WRAP START-->
-        <div class="city_404_wrap overlay">
-            <div class="container">
-                <div class="city_404_text">
-                    <h2>404</h2>
-                    <h3>Recurso no encontrado</h3>
-                    <h4>Ups, la página que estás buscando no se encuentra aquí.</h4>
-                    <a class="theam_btn animated" href="{{ route('front.home')}}" tabindex="0">Regresar a la pagina principal</a>
+    <!-- 404 content -->
+    <section class="pt-5 pb-5 bg-light">
+        <div class="container">
+            <div class="not-found text-center">
+                <img src="{{ asset('intelc/img/404.png')}}" alt="" data-animate="shake" data-delay="1.3">
+                <span class="roboto" data-animate="fadeInUp" data-delay=".1">Oops!</span>
+                <p data-animate="fadeInUp" data-delay=".2">La página que está buscando se movió, eliminó, cambió de nombre o es posible que nunca exista..</p>
+                <div class="row justify-content-center">
+                    <div class="col-lg-6 col-md-8">
+                        <a href="/" data-animate="fadeInUp" data-delay=".2"><i class="fas fa-home"></i> Ir a casa</a>
+                    </div>
                 </div>
             </div>
         </div>
-        <!-- CITY 404 WRAP END-->
-    </div>
+    </section>
         
 @endsection

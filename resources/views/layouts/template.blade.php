@@ -36,7 +36,7 @@
     @stack('styles_add')
     @yield('other_styles')
 
-    <link rel="shortcut icon" type="image/png" href="favicon.png">
+    <link rel="shortcut icon" type="image/png" href="{{ asset('intelc/img/clogo.png')}}">
 
     <!-- CSS Files -->
     <link href="https://fonts.googleapis.com/css?family=Cabin:400,400i,500i,700%7CRoboto:400,500,700" rel="stylesheet">
@@ -80,7 +80,16 @@
     <script src="{{ asset('intelc/js/menu.min.js') }}"></script>
     <script src="{{ asset('intelc/js/scripts.js') }}"></script>
     <script src="{{ asset('intelc/js/custom.js') }}"></script>
-
+    <script>
+        function copyToClipBoard(content) {
+            var aux = document.createElement("input");
+            aux.setAttribute("value", content);
+            document.body.appendChild(aux);
+            aux.select();
+            document.execCommand("copy");
+            document.body.removeChild(aux);
+        }
+    </script>
 
     @yield('scripts')
     @yield('script_last')

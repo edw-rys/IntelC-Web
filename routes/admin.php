@@ -2,71 +2,55 @@
 use Illuminate\Support\Facades\Route;
 // Admin Route
 Route::group([],function(){
-    Route::get('dashboard.index', 'DashboardController@index')->name('dashboard.index');
-    /**
-     * Accomodation routes
-     */
-    Route::resource('accommodation', 'AccommodationController')->except(['show','update']);
-    Route::post('accommodation/update/{id}', 'AccommodationController@update')->name('accommodation.update');
-    Route::delete('accommodation/item/remove/{id}', 'AccommodationController@removeItem')->name('accommodation.item.remove');
-    Route::post('accommodation/store/upload', 'AccommodationController@updoadFiles')->name('accommodation.store.upload');
+    Route::get('dashboard', 'DashboardController@index')->name('dashboard.index');
 
     /**
      * Services routes
      */
-    Route::resource('service', 'ServiceController')->except(['show','update']);
+    Route::resource('service', 'ServiceController')->except(['show']);
     Route::post('service/update/{id}', 'ServiceController@update')->name('service.update');
-    Route::delete('service/item/remove/{id}', 'ServiceController@removeItem')->name('service.item.remove');
-    Route::post('service/store/upload', 'ServiceController@updoadFiles')->name('service.store.upload');
-    /**
-     * Directions
-     */
-    Route::resource('directions', 'DirectionsController')->except(['show','update']);
-    Route::post('directions/update/{id}', 'DirectionsController@update')->name('directions.update');
-    Route::delete('directions/item/remove/{id}', 'DirectionsController@removeItem')->name('directions.item.remove');
-    Route::post('directions/store/upload', 'DirectionsController@updoadFiles')->name('directions.store.upload');
-    /**
-     * Notices routes
-     */
-    Route::resource('notice', 'NoticeController')->except(['show','update']);
-    Route::post('notice/update/{id}', 'NoticeController@update')->name('notice.update');
-    Route::delete('notice/item/remove/{id}', 'NoticeController@removeItem')->name('notice.item.remove');
-    Route::post('notice/store/upload', 'NoticeController@updoadFiles')->name('notice.store.upload');
+    Route::post('service/restore/{id}', 'ServiceController@restore')->name('service.restore');
 
     /**
-     * Events schedule routes
+     * Plans and Prices
      */
-    Route::resource('schedule', 'ScheduleController')->except(['show','update']);
-    Route::post('schedule/update/{id}', 'ScheduleController@update')->name('schedule.update');
-    Route::delete('schedule/item/remove/{id}', 'ScheduleController@removeItem')->name('schedule.item.remove');
-    Route::post('schedule/store/upload', 'ScheduleController@updoadFiles')->name('schedule.store.upload');
-    Route::get('schedule_/participants/{id}', 'ScheduleController@participants')->name('schedule.participants');
-    Route::post('schedule_/participants_store', 'ScheduleController@participantsStore')->name('schedule.participants.store');
-    Route::post('schedule_/participants_delete/{ID}', 'ScheduleController@participantsDelete')->name('schedule.participants.delete');
-    
+    Route::resource('planes-prices', 'PlanesPricesController')->except(['show']);
+    Route::post('planes-prices/update/{id}', 'PlanesPricesController@update')->name('planes-prices.update');
+    Route::post('planes-prices/restore/{id}', 'PlanesPricesController@restore')->name('planes-prices.restore');
+
     /**
-     * Obras routes
+     * Plans and Prices
      */
-    Route::resource('obra', 'ObraController')->except(['show','update']);
-    Route::post('obra/update/{id}', 'ObraController@update')->name('obra.update');
-     /**
-     * Gallery routes
-     */
-    Route::resource('gallery', 'GalleryController')->except(['show','update']);
-    Route::post('gallery/update/{id}', 'GalleryController@update')->name('gallery.update');
-    // Route::delete('service/item/remove/{id}', 'ServiceController@removeItem')->name('service.item.remove');
-    // Route::post('service/store/upload', 'ServiceController@updoadFiles')->name('service.store.upload');
-    
-    
+    Route::resource('planes-prices', 'PlanesPricesController')->except(['show']);
+    Route::post('planes-prices/update/{id}', 'PlanesPricesController@update')->name('planes-prices.update');
+    Route::post('planes-prices/restore/{id}', 'PlanesPricesController@restore')->name('planes-prices.restore');
+
     /**
-     * Files Route
+     * Testimonials
      */
-    Route::get('files/{type}', 'FilesController@index')->name('files.index');//->except(['show','update']);
-    Route::get('files/create/{type_id}', 'FilesController@create')->name('files.create');//->except(['show','update']);
-    Route::post('files/{type_id}', 'FilesController@store')->name('files.store');//->except(['show','update']);
-    Route::get('files/{type_id}/edit', 'FilesController@edit')->name('files.edit');//->except(['show','update']);
-    Route::delete('files/delete/{type_id}', 'FilesController@destroy')->name('files.delete');//->except(['show','update']);
-    Route::post('files/update/{id}', 'FilesController@update')->name('files.update');
-    Route::delete('files/item/remove/{id}', 'FilesController@removeItem')->name('files.item.remove');
-    Route::post('files/store/upload', 'FilesController@updoadFiles')->name('files.store.upload');    
+    Route::resource('testimonials', 'TestimonialsController')->except(['show']);
+    Route::post('testimonials/update/{id}', 'TestimonialsController@update')->name('testimonials.update');
+    Route::post('testimonials/restore/{id}', 'TestimonialsController@restore')->name('testimonials.restore');
+
+    /**
+     * Our team
+     */
+    Route::resource('our-team', 'OurTeamController')->except(['show']);
+    Route::post('our-team/update/{id}', 'OurTeamController@update')->name('our-team.update');
+    Route::post('our-team/restore/{id}', 'OurTeamController@restore')->name('our-team.restore');
+
+    /**
+     * Questions
+     */
+    Route::resource('questions', 'QuestionsController')->except(['show']);
+    Route::post('questions/update/{id}', 'QuestionsController@update')->name('questions.update');
+    Route::post('questions/restore/{id}', 'QuestionsController@restore')->name('questions.restore');
+
+    /**
+     * Blog
+     */
+    Route::resource('blog', 'BlogController')->except(['show']);
+    Route::post('blog/update/{id}', 'BlogController@update')->name('blog.update');
+    Route::post('blog/restore/{id}', 'BlogController@restore')->name('blog.restore');
+    
 });

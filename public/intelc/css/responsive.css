@@ -402,12 +402,6 @@
     .page-title h1 {
         font-size: 2rem;
     }
-    .post-content blockquote {
-        padding-right: 0;
-    }
-    .post-content blockquote span {
-        display: none;
-    }
     .social-share li a {
         width: 38px;
     }

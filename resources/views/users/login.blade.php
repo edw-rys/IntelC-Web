@@ -10,7 +10,7 @@
         <div class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
           <div class="login-brand flex flex-center" style="background: linear-gradient(120deg, #ffffff, #75e168, #04b119) !important; padding: 10px 0">
             <h2 class="text-center text-white">
-              <img src="{{ asset('img/logo.svg') }}" alt="">
+              <img src="{{ asset('intelc/img/logo.png') }}" alt="" style="width: 200px">
             </h2>
           </div>
 

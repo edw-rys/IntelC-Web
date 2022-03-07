@@ -34,7 +34,7 @@ class ServiceDataTable extends DataTable
      */
     public function query(Service $model): Builder
     {
-        return $model->newQuery()->where('status', 'active');
+        return $model->newQuery()->withTrashed();
     }
 
     /**
@@ -45,7 +45,13 @@ class ServiceDataTable extends DataTable
     protected function getColumns(): array
     {
         return [
-            Column::make('id')->title('N°')->className('text-center'),
+            Column::computed('DT_RowIndex','Num')
+                ->exportable(false)
+                ->printable(false)
+                ->orderable(false)
+                ->searchable(false)
+                ->width(150)
+                ->addClass('text-center'),
             Column::make('title')->title('Título')->className('text-center'),
             Column::make('image')->title('Imágen')->className('text-center'),
             Column::make('status')->title('Estado')->className('text-center'),
@@ -87,7 +93,7 @@ class ServiceDataTable extends DataTable
             ->editColumn('name', static function ($query) {
                 return $query->name;
             })
-            ->editColumn('status', static function ($query) {
+            ->addColumn('status', static function ($query) {
                 return status($query->status);
             })
             ->editColumn('created_at', static function ($query) {
@@ -97,8 +103,9 @@ class ServiceDataTable extends DataTable
                 return dropdown_action($query->id, $query->status, $action, $route, 0);
             })
             ->editColumn('image', static function ($query) {
-                return '<a href="'.$query->file_url.'" target="_blank"><img src="'.$query->file_url.'" style="width:100px"></a>';
+                return '<a href="'.$query->file_url.'" target="_blank"><img src="'.$query->file_url.'" style="width:20px"></a>';
             })
+            ->addIndexColumn()
             ->escapeColumns([]);
     }
 }

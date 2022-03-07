@@ -5,7 +5,10 @@ use App\Imports\ImportPines;
 use App\Models\Book;
 use App\Models\Generados;
 use App\Models\Pines;
+use App\Models\PlanesPrices;
 use App\Models\Role;
+use App\Models\Service;
+use App\Models\Testimonials;
 use App\Models\Texto;
 use App\Models\User;
 use Carbon\Carbon;
@@ -37,14 +40,22 @@ Route::post('login', 'LoginController@login')->name('auth.login')->middleware(['
 
 
 Route::get('/', function () {
+    $services = Service::all();
+    $planesPrices = PlanesPrices::all();
+    $testimonials = Testimonials::all();
+    
     return view('static.home')
         ->with('title', 'Palora')
+        ->with('services', $services)
+        ->with('testimonials', $testimonials)
+        ->with('planesPrices', $planesPrices)
         ->with('meta_description', '')
         ;
 })->name('front.home');
 
 Route::get('/web/{page}', 'FrontController@index')->name('front.view.static');
 
+Route::get('front/blog/{id}', 'FrontController@showBlog')->name('front.blog.show');
 
 /**
  * Information
@@ -77,6 +88,6 @@ Route::get('/web/{page}', 'FrontController@index')->name('front.view.static');
 
 // Route::get('front/search', 'FrontController@searchGlobal')->name('front.search');
 
-// Route::post('front/contact/submit', 'FrontController@submit')->name('front.contact.submit');
+Route::post('front/contact/submit', 'FrontController@submit')->name('front.contact.submit');
 
-// Route::get('admin/user/logout', 'LoginController@logout')->middleware('IsAuthenticated')->name('admin.user.logout');
+Route::get('admin/user/logout', 'LoginController@logout')->middleware('IsAuthenticated')->name('admin.user.logout');

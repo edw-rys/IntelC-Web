@@ -27,7 +27,8 @@ class StoreServiceRequest extends FormRequest
             'title'                 => ['required', 'string', 'max:500'],
             'short_description'     => ['required', 'string'],
             'description'           => ['required', 'string'],
-            'image'                 => ['required', 'image', 'mimes:jpeg,jpg,png,gif', 'max:1024'],
+            'image'                 => ['required', 'string'],
+            // 'image'                 => ['required', 'image', 'mimes:jpeg,jpg,png,gif,svg', 'max:1024'],
         ];
     }
 }
