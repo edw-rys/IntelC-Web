@@ -1,7 +1,7 @@
 <?php
 
 return [
-
+	'email_user'			=> env('MAIL_FROM_ADDRESS'),
 	'front_menus'	=> [
 		(object) [
 			'title' => 'Inicio',

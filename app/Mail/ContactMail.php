@@ -33,6 +33,7 @@ class ContactMail extends Mailable
     {
         return $this->markdown('emails.contact')
             ->subject($this->subject)
+            ->with('subject', $this->subject)
             ->with('name', $this->name)
             ->with('email', $this->email)
             ->with('message', $this->message)

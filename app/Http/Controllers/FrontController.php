@@ -64,7 +64,7 @@ class FrontController extends Controller
      */
     public function submit(ContactRequest $request)
     {
-        Mail::to([$request->input('email')])->send( new ContactMail($request->input('message'), $request->input('subject'), $request->input('name'), $request->input('email')));
+        Mail::to([config('app_intelc.email_user')])->send( new ContactMail($request->input('message'), $request->input('subject'), $request->input('name'), $request->input('email')));
 
         return redirect()
             ->back()

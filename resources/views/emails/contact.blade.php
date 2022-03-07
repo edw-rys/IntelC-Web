@@ -6,6 +6,8 @@
 
 # Nombre: {{ $name }}
 
+# Asunto: {{ $subject }}
+
 {{ $message }}
 
 Saludos,<br>
