@@ -2,6 +2,7 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\SaveViewMiddleware;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -69,6 +70,7 @@ class Kernel extends HttpKernel
         'IsAuthenticated' => \App\Http\Middleware\IsAuthenticated::class,
         'auth.student' => \App\Http\Middleware\AuthStudentMiddleware::class,
         'role' => \Spatie\Permission\Middlewares\RoleMiddleware::class,
+        'save_visit'  => SaveViewMiddleware::class,
 
         'intitution_session' => \App\Http\Middleware\InstitutionSession::class,
         // 'set_db'            => \App\Http\Middleware\SettingsDatabase::class
