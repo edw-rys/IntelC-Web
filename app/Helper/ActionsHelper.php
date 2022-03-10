@@ -82,23 +82,27 @@ if (! function_exists('dropdown_action')) {
             if (have_permission('close_'.$action,  auth()->user()->id)) {
                 $dropdown .= inactive_action($route . '.close', $id, $action, 'Cerrar', 'd-inline', ' btn btn-warning');
             }
-
+            $haveDeleted = false;
             if($route == 'admin.admin'){
                 // dd($id, $protected );
                 if ($id != $auth_id && !$protected && have_permission('delete_'.$action,  auth()->user()->id)) {
+                    $haveDeleted = true;
                     $dropdown .= delete_action($route . '.destroy', $id, $action);
                 }
             }else{
 
                 if (!$protected && have_permission('delete_'.$action,  auth()->user()->id)) {
-                    $dropdown .= delete_action($route . '.destroy', $id, $action);
+                    $haveDeleted = true;
+                    $dropdown .= delete_action($route . '.del-sup', $id, $action);
+                    // $dropdown .= delete_action($route . '.destroy', $id, $action);
                 }
             }
             if (have_permission('shared_'.$action,  auth()->user()->id)) {
                 $dropdown .= show_action($route . '.shared', $id, 'Compartir', "fas fa-share-alt");
             }
-            if (have_permission('delete_'.$action,  auth()->user()->id)) {
-                $dropdown .= delete_action($route . '.delete', $id, $action);
+            if (have_permission('delete_'.$action,  auth()->user()->id) && !$haveDeleted) {
+                $dropdown .= delete_action($route . '.del-sup', $id, $action);
+                // $dropdown .= delete_action($route . '.delete', $id, $action);
             }
             if ($status === 'created') {
                 $dropdown .= enable_action_bd($route . '.enable', $id, $action);
@@ -111,7 +115,8 @@ if (! function_exists('dropdown_action')) {
             }
 
             if (have_permission('delete_'.$action,  auth()->user()->id)) {
-                $dropdown .= delete_action($route . '.destroy', $id, $action);
+                $dropdown .= delete_action($route . '.del-sup', $id, $action);
+                // $dropdown .= delete_action($route . '.destroy', $id, $action);
             }
         }
         // Deleted
@@ -227,7 +232,7 @@ if (! function_exists('delete_action')) {
 
         return '<form action="' . route($route, $id) . '" method="POST" id="form-delete-'.$id.'" data-delete="true" class="' . $block . '" onsubmit="deleteData(event, \''.route($route, $id).'\', \''.$datatable_id.'\', \''.$id.'\')">' .
             '<input type="hidden" name="id" value="' . $id . '">' .
-            '<input type="hidden" name="_method" value="delete">' .
+            '<input type="hidden" name="_method" value="post">' .
             '<input type="hidden" name="_token" value="' . csrf_token() . '">' .
             '<div class="dropdown-divider"></div>' .
             '<button type="submit" class="dropdown-item btn btn-danger btn-sm"><i class="far fa-trash-alt"></i> ' . $name . '</button>' .

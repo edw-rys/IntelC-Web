@@ -1,8 +1,8 @@
-APP_NAME=PINES
+APP_NAME="IntelC"
 APP_ENV=local
 APP_KEY=base64:ioiRKvg44b8R3Iuv74bBfDpOoGOQfgduVtjwZj7b9UI=
 APP_DEBUG=true
-APP_URL=http://pines.liranka.test
+APP_URL=http://intelc.test
 APP_ENV_PROJECT=DEV
 
 LOG_CHANNEL=stack
@@ -11,17 +11,18 @@ LOG_CHANNEL=stack
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=pines_platforms
-DB_USERNAME=root
-DB_PASSWORD=
+DB_DATABASE=intelcne_db_2022
+DB_USERNAME=intelcne__ec_20
+DB_PASSWORD=eAt#WUuCgIyy
 
 #ALL DATABASES
 DB_INSTANCE_CONNECTION=mysql
 DB_INSTANCE_HOST=127.0.0.1
 DB_INSTANCE_PORT=3306
-# DB_INSTANCE_DATABASE=pines_platforms
+DB_INSTANCE_DATABASE=intelc_db_2022
 DB_INSTANCE_USERNAME=root
 DB_INSTANCE_PASSWORD=
+
 
 BROADCAST_DRIVER=log
 CACHE_DRIVER=file
@@ -35,10 +36,10 @@ REDIS_PORT=6379
 
 
 MAIL_MAILER=smtp
-MAIL_HOST=smtp.mailtrap.io
-MAIL_PORT=2525
-MAIL_USERNAME=3eb7fa52e04464
-MAIL_PASSWORD=a66a867939449a
+MAIL_HOST=smtp.gmail.com
+MAIL_PORT=587
+MAIL_USERNAME=reytoni876@gmail.com
+MAIL_PASSWORD=mlxmrlxbzwcjtjlz
 MAIL_ENCRYPTION=tls
 MAIL_FROM_ADDRESS=edw-toni@hotmail.com
 MAIL_FROM_NAME="${APP_NAME}"
@@ -56,3 +57,7 @@ PUSHER_APP_CLUSTER=mt1
 
 MIX_PUSHER_APP_KEY="${PUSHER_APP_KEY}"
 MIX_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
+
+
+PALETE= #1b1717,#75e168, #810000, #eeebdd
+#<a href='https://www.freepik.es/vectores/escuela'>Vector de Escuela creado por freepik - www.freepik.es</a>

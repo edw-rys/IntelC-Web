@@ -371,7 +371,7 @@
             
             if (result.isConfirmed) {
               $.easyAjax({
-                type: 'DELETE',
+                type: 'POST',
                 url: url,
                 data: $('#form-delete-' + id).serialize(),
                 success: function(response) {

@@ -17,6 +17,12 @@
                     <li class="{{ isActiveRoute('blog') ? 'active' : '' }}"><a href="{{ route('front.view.static', 'blog') }}">Blog</a></li>
                     <li class="{{ isActiveRoute('faq') ? 'contact' : '' }}"><a href="{{ route('front.view.static', 'faq') }}">Preguntas frecuentes</a></li>
                     <li class="{{ isActiveRoute('test-velocidad') ? 'contact' : '' }}"><a href="{{ route('front.view.static', 'test-velocidad') }}">Test de velocidad</a></li>
+                    <li>
+                        <a href="#">Archivos <i class="fas fa-caret-down"></i></a>
+                        <ul>
+                            <li><a href="{{ route('front.files.index', 'files') }}">Archivos</a></li>
+                        </ul>
+                    </li>
                     <li class="{{ isActiveRoute('blog') ? 'contact' : '' }}"><a href="{{ route('front.view.static', 'contact') }}">Contacto</a></li>
                 </ul>
             </div>

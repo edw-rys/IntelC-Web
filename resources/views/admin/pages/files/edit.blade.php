@@ -83,7 +83,7 @@
         if (confirm('¿Está seguro que desea eliminar la información?')) {
             $.easyAjax({
                 url: route,
-                type: "DELETE",
+                type: "POST",
                 redirect: false,
                 data: {
                     _token : token,

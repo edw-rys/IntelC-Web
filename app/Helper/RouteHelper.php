@@ -23,9 +23,12 @@ if (! function_exists('isActiveRoute')) {
      */
     function isActiveRoute($route = ''): bool
     {
+        if (\Illuminate\Support\Facades\Route::getCurrentRoute() == null) {
+            return false;
+        }
         $paramRouteName = \Illuminate\Support\Facades\Route::getCurrentRoute()->parameter('page');
         if ($paramRouteName == null) {
-            $paramRouteName = 'home';
+            $paramRouteName = 'homed';
         }
         return $paramRouteName == $route ;
     }

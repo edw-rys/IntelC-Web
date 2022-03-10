@@ -78,7 +78,6 @@ class FrontController extends Controller
     {
         viewExist($this->views->dinamic .'blog');
 
-
         // $items = PlanesPrices::select('*')
         $items = Blog::select('*')
             ->paginate(20);
@@ -103,6 +102,30 @@ class FrontController extends Controller
             ->with('title', $item->title.'|IntelC')
             ->with('meta_description', 'Blog,IntelC,Palora')
             ->with('item',$item);
+    }
+    /**
+     * @param $type
+     */
+    public function getFiles($type)
+    {
+        $type = TypesFiles::where('system_name', $type)->first();
+
+        if ($type == null) {
+            abort(404);
+        }
+
+        viewExist($this->views->dinamic .'files');
+
+
+        $items = GroupFile::where('type_id', $type->id)
+            ->where('status', 'active')
+            ->paginate(5);
+            
+        return view($this->views->dinamic .'files')
+            ->with('type',$type)
+            ->with('title',$type->title)
+            ->with('meta_description', $type->title.',Palora,Ecuador')
+            ->with('items',$items);
     }
 }
 

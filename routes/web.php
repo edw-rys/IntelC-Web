@@ -57,6 +57,8 @@ Route::get('/web/{page}', 'FrontController@index')->name('front.view.static');
 
 Route::get('front/blog/{id}', 'FrontController@showBlog')->name('front.blog.show');
 
+Route::get('front/files/{type}', 'FrontController@getFiles')->name('front.files.index');
+
 /**
  * Information
  */

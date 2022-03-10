@@ -11,6 +11,7 @@ if (! function_exists('menu_files')) {
     function menu_files($maxLength = null)
     {
         $files_db = TypesFiles::where('status', 'active')->get();
+        // dd($files_db);
         return $files_db->map(function($item){
             return (object)[
                 'title'             => $item->title,
@@ -92,8 +93,11 @@ if (! function_exists('menu_admin')) {
                         'route'			=> 'admin.blog.index'
                     ],
                 ],
-                
-            ]
+            ],
+            (object) [
+                'header'	=> 'Archivos',
+                'menus'	=> menu_files(),
+            ],
         ];
     }
 }
