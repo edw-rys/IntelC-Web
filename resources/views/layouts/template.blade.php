@@ -7,7 +7,8 @@
     <!--====== Title ======-->
     <title>{{ config('app.name') }} | {{ $title }}</title>
 
-    <meta name="description" content="IntelC, Internet, Fibra óptica">
+    <meta name="description" content="El mejor internet de Fibra Óptica. Encuentra el plan que más desees y vuela con tu navegación con fibra óptica. En Palora, contrata el mejor internet de Fibra Óptica.">
+    <meta name="keyworks" content="IntelC, Internet, Fibra óptica">
     <meta name="author" content="SmartFrame" />
     <meta name="copyright" content="IntelC" />
     <meta name="robots" content="index"/>
