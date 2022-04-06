@@ -357,6 +357,7 @@ CREATE TABLE `planes_prices` (
   `description` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `video_url` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `content` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `type_id` bigint(20) DEFAULT null,
   `created_by` bigint(20) UNSIGNED NOT NULL,
   `updated_by` bigint(20) UNSIGNED DEFAULT NULL,
   `deleted_by` bigint(20) UNSIGNED DEFAULT NULL,
@@ -661,6 +662,15 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `name`, `last_name`, `email`, `email_verified_at`, `password`, `status`, `deleted_at`, `remember_token`, `created_at`, `updated_at`) VALUES
 (1, 'Edw', 'Rys', 'admin@admin.com', NULL, '$2y$10$a6BkCdtNDbPXi/3EbHCHsekfl1JK7RrbqTZrZnUlEAh.jxmWVMNf6', 'active', NULL, NULL, '2022-03-06 20:30:32', '2022-03-06 20:30:32');
 
+
+
+CREATE TABLE `type_planes` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
 --
 -- Indexes for dumped tables
 --
@@ -846,6 +856,11 @@ ALTER TABLE `testimonals`
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `users_email_unique` (`email`);
+
+
+ALTER TABLE `type_planes`
+  ADD PRIMARY KEY (`id`);
+
 
 --
 -- AUTO_INCREMENT for dumped tables

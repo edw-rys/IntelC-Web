@@ -10,6 +10,7 @@ use App\Models\Role;
 use App\Models\Service;
 use App\Models\Testimonials;
 use App\Models\Texto;
+use App\Models\TypePlanes;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -44,12 +45,13 @@ Route::get('/', function () {
     $services = Service::all();
     $planesPrices = PlanesPrices::all();
     $testimonials = Testimonials::all();
-    
+    $typePlanes = TypePlanes::all();
     return view('static.home')
         ->with('title', 'INICIO')
         ->with('services', $services)
         ->with('testimonials', $testimonials)
         ->with('planesPrices', $planesPrices)
+        ->with('typePlanes', $typePlanes)
         ->with('meta_description', '')
         ;
 })->name('front.home');

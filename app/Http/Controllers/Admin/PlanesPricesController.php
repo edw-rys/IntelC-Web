@@ -9,6 +9,7 @@ use App\Http\Requests\Admin\PlanesPrices\UpdatePlanesPricesRequest;
 use App\Models\Icons;
 use App\Models\PlanesPrices;
 use App\Models\ServiceContent;
+use App\Models\TypePlanes;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -83,6 +84,7 @@ class PlanesPricesController extends Controller
         return view($this->views->create)
             ->with('route', 'admin.'.$this->action.'.store')
             ->with('icons', Icons::all())
+            ->with('type_plans', TypePlanes::all())
             ->with('singular_title',$this->singular_title)
             ->with('action', $this->action);
     }
@@ -136,6 +138,7 @@ class PlanesPricesController extends Controller
         return view($this->views->edit)
             ->with('item', $item)
             ->with('route_upload', 'admin.'.$this->action.'.store.upload')
+            ->with('type_plans', TypePlanes::all())
             ->with('icons', Icons::all())
             ->with('singular_title',$this->singular_title)
             ->with('route', 'admin.'.$this->action.'.update')
@@ -162,6 +165,7 @@ class PlanesPricesController extends Controller
 
       
         
+        $item->type_id  = $request->input('type_id');
         $item->image    = $request->input('image');
         $item->title    = $request->input('title');
         $item->price    = $request->input('price');

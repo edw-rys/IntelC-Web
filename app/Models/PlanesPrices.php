@@ -21,6 +21,7 @@ class PlanesPrices extends Model implements AuditableContract
         'image',
         'background',
         'description',
+        'type_id',
         'video_url',
         'content',
         'created_by',

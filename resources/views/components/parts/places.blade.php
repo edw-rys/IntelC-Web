@@ -1,5 +1,5 @@
 <!-- Servers -->
-<section class="servers pt-7 bg-light">
+<section class="servers pt-7 bg-light" style="background: linear-gradient(0deg, rgba(255,255,255,1) 44%, rgba(249,199,150,1) 100%);">
     <div class="container">
         <div class="row">
             <div class="col-xl-4 col-lg-5">

@@ -6,7 +6,7 @@
                 <div class="col-xl-6 col-lg-8">
                     <!-- Section title -->
                     <div class="section-title text-center">
-                        <h2 class="text-white" data-animate="fadeInUp" data-delay=".1">¿Por qué necesitas nuestro servicio?</h2>
+                        <h2 class="text-white" data-animate="fadeInUp" data-delay=".1" style="font-size: 2.5em">¡Ventajas De Elegir Nuestros Servicios!</h2>
                         {{-- <p class="text-white" data-animate="fadeInUp" data-delay=".3">Te damos varios </p> --}}
                     </div>
                 </div>

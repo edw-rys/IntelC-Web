@@ -1,5 +1,5 @@
 <!-- Footer -->
-<footer class="main-footer bg-primary pt-4">
+<footer class="main-footer bg-primary pt-4" style="    font-size: 1.2em;">
     <div class="container">
         <div class="row pb-3">
             <!-- Footer info -->
@@ -19,7 +19,7 @@
             <div class="col-md-4">
                 <div class="footer-newsletter">
                     <h3 class="text-white" data-animate="fadeInUp" data-delay="0">Contácto</h3>
-                    <ul class="footer-contacts list-unstyled">
+                    <ul class="footer-contacts list-unstyled" style="font-size: 1em;">
                         <li data-animate="fadeInUp" data-delay=".1">
                             <i class="fas fa-phone"></i>
                             <a href="tel:+593979150254">(+593) 979150254</a>, 
@@ -36,6 +36,26 @@
                             <span>Edf: Pérez  oficina # 1 </span>
                             <br>
                             <span>PALORA-Morona Santiago </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            {{--  --}}
+            @php
+                $visitantes = count_visitantes();
+            @endphp
+            <div class="col-md-4">
+                <div class="footer-newsletter">
+                    <h3 class="text-white" data-animate="fadeInUp" data-delay="0">Visitantes: </h3>
+                    <ul class="footer-contacts list-unstyled" style="font-size: 1em;">
+                        <li data-animate="fadeInUp" data-delay=".1" style="padding-left: 5px">
+                            <strong >Dirario: {{ $visitantes->daily }}</strong>
+                        </li>
+                        <li data-animate="fadeInUp" data-delay=".1" style="padding-left: 5px">
+                            <strong >Mensual: {{ $visitantes->month }}</strong>
+                        </li>
+                        <li data-animate="fadeInUp" data-delay=".1" style="padding-left: 5px">
+                            <strong >Anual: {{ $visitantes->all }}</strong>
                         </li>
                     </ul>
                 </div>

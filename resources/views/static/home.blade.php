@@ -10,10 +10,10 @@
     $routes_img = [asset('intelc/img/slide2.png'), asset('intelc/img/slide3.png')];
     @endphp
     <section class="position-relative bg-light pb-4">
-        <div id="particles_js"></div>
         <div class="">
+            <div id="particles_js"></div>
             <div class="row align-items-center w-100">
-                <div id="carouselExampleIndicators" class="carousel slide w-100" data-ride="carousel">
+                <div id="carouselExampleIndicators" class="carousel slide w-100 carousel-fade" data-ride="carousel">
                     <ol class="carousel-indicators">
                         @foreach ($routes_img as $k_i => $img_r)
                             <li data-target="#carouselExampleIndicators" data-slide-to="{{ $k_i }}"
@@ -50,7 +50,7 @@
                 <div class="col-lg-6 m-auto pt-2">
                     <!-- Banner content -->
                     <div class="banner-content">
-                        <h1 data-animate="fadeInUp" data-delay="1.2" style="font-size: 1.5em">El mejor proveedor de servicio
+                        <h1 data-animate="fadeInUp" data-delay="1.2" style="font-size: 2em">El mejor proveedor de servicio
                             de internet de Palora en {{ date('Y') }}</h1>
                         <h2 data-animate="fadeInUp" data-delay="1.3"><span class="typed"></span></h2>
                         <ul class="list-inline" data-animate="fadeInUp" data-delay="1.4">

@@ -17,9 +17,9 @@ class SaveViewMiddleware
      */
     public function handle($request, Closure $next)
     {
-        $pageVisited = isset($_COOKIE['is_visited']);
+        // $pageVisited = isset($_COOKIE['is_visited']);
 
-        if (!$pageVisited) {
+        // if (!$pageVisited) {
             // $ip = $this->server->get('REMOTE_ADDR');
             Views::create(
                 [
@@ -28,7 +28,7 @@ class SaveViewMiddleware
             );
             Cookie::queue('is_visited', 'true', 60 * 24 * 365);
             // cookie('is_visited', 'visite',60 * 24 * 365);
-        }   
+        // }   
         return $next($request);
     }
 }

@@ -132,4 +132,8 @@
             </div>
         </div>
     </section>
+    <section class="pt-7 pb-7">
+        <h4 class="text-center" style="font-size: 2em">Ubícanos</h4>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31904.428865548914!2d-77.98203021410033!3d-1.704174320468668!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d3d61eb0d4219d%3A0x4dc0be7af92197d0!2sPalora!5e0!3m2!1ses-419!2sec!4v1649280849236!5m2!1ses-419!2sec" style="width: 100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
 @endsection

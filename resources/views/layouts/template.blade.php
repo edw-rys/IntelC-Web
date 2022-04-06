@@ -44,7 +44,7 @@
     <link rel="stylesheet" href="{{ asset('intelc/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('intelc/plugins/swiper/swiper.min.css') }}">
     <link rel="stylesheet" href="{{ asset('intelc/plugins/magnific-popup/magnific-popup.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('intelc/css/style.css') }}?v=1.2">
+    <link rel="stylesheet" href="{{ asset('intelc/css/style.css') }}?v=2.2">
     <link rel="stylesheet" href="{{ asset('intelc/css/button-whatsapp.css') }}?v=1.2">
     <link rel="stylesheet" href="{{ asset('intelc/css/responsive.css') }}?v=1.2">
     <link rel="stylesheet" href="{{ asset('intelc/css/colors/theme-color-1.css') }}">
@@ -74,7 +74,7 @@
     <script src="{{ asset('intelc/plugins/waypoints/sticky.min.js') }}"></script>
     <script src="{{ asset('intelc/plugins/swiper/swiper.min.js') }}"></script>
     <script src="{{ asset('intelc/plugins/particles.js/particles.min.js') }}"></script>
-    <script src="{{ asset('intelc/plugins/particles.js/particles.settings.js') }}"></script>
+    <script src="{{ asset('intelc/plugins/particles.js/particles.settings.js') }}?v=1.1"></script>
     <script src="{{ asset('intelc/plugins/magnific-popup/jquery.magnific-popup.min.js') }}"></script>
     <script src="{{ asset('intelc/plugins/parsley/parsley.min.js') }}"></script>
     <script src="{{ asset('intelc/plugins/parallax/parallax.min.js') }}"></script>
@@ -91,6 +91,36 @@
             document.execCommand("copy");
             document.body.removeChild(aux);
         }
+    </script>
+    <script>
+        function filterPans(type_id){
+            $('.card-plan-typeall').addClass('d-none');
+            $('.card-plan-type-'+type_id).removeClass('d-none');
+            var pricingSlider = new Swiper('.pricing-slider', {
+                slidesPerView: 3,
+                loop: true,
+                centeredSlides: true,
+                spaceBetween: 2,
+                allowTouchMove: false,
+                speed: 500,
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: true,
+                },
+                pagination: {
+                    el: '.pricing-pagination',
+                    clickable: true,
+                },
+                breakpoints: {
+                    // when window width is <= 575px
+                    575: {
+                        slidesPerView: 1
+                    }
+                }
+            });
+        }
+        
+        filterPans(1);
     </script>
 
     @yield('scripts')

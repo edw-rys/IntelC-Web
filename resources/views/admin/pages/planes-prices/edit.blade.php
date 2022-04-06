@@ -37,6 +37,16 @@
                         <input id="image" type="file" class="form-control" name="image" accept="image/*">
                     </div>
                      --}}
+                    <div class="form-group @error('type_id') {{ 'is-invalid' }} @enderror">
+                        <label for="type_id">Tipo de plan</label>
+                        <select name="type_id" id="type_id" style="width: 100%">
+                            @foreach ($type_plans as $type)
+                                <option value="{{ $type->id }}" {{ $type->id == $item->type_id ? 'selected': '' }}>{{ $type->title }}
+                                </option>
+                            @endforeach
+                        </select>
+                        <p id="err-type_id" class="hidden helper-block err-fields"></p>
+                    </div>
                     <div class="form-group @error('image') {{ 'is-invalid' }} @enderror">
                         <label for="short_description">Icono</label>
                         <select name="image" id="image" style="width: 100%">

@@ -1,5 +1,8 @@
 <?php
 
+use App\Models\Views;
+use Carbon\Carbon;
+
 if (! function_exists('status')) {
     /**
      * Build status badge or button
@@ -336,5 +339,25 @@ if (! function_exists('auditStatuses')) {
         ksort($status);
 
         return $status;
+    }
+}
+
+
+if (! function_exists('count_visitantes')) {
+    /**
+     * Get audit statuses
+     *
+     * @return array
+     */
+    function count_visitantes()
+    {
+        $now = Carbon::now();
+        return (object)[
+            'daily' => Views::whereDate('created_at', $now )->count(),
+            'month' => Views::whereMonth('created_at', $now->month )
+                ->whereYear('created_at', $now->year )
+                ->count(),
+            'all'   => Views::count(),
+        ];
     }
 }

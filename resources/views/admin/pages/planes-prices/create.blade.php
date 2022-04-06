@@ -27,8 +27,19 @@
                     <textarea name="description" id="description" class="d-none"></textarea>
                 </div>
 
+                <div class="form-group @error('type_id') {{ 'is-invalid' }} @enderror">
+                    <label for="type_id">Tipo de plan</label>
+                    <select name="type_id" id="type_id" style="width: 100%">
+                        @foreach ($type_plans as $type)
+                            <option value="{{ $type->id }}">{{ $type->title }}
+                            </option>
+                        @endforeach
+                    </select>
+                    <p id="err-type_id" class="hidden helper-block err-fields"></p>
+                </div>
+
                 <div class="form-group @error('image') {{ 'is-invalid' }} @enderror">
-                    <label for="short_description">Icono</label>
+                    <label for="image">Icono</label>
                     <select name="image" id="image" style="width: 100%">
                         @foreach ($icons as $icon)
                             <option value="{{ $icon->class }}"><img
@@ -36,7 +47,7 @@
                             </option>
                         @endforeach
                     </select>
-                    <p id="err-short_description" class="hidden helper-block err-fields"></p>
+                    <p id="err-image" class="hidden helper-block err-fields"></p>
                 </div>
 
                 {{-- <div class="form-group">
