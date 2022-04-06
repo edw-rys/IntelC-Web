@@ -72,7 +72,7 @@
                 var speedKbps = (speedBps / 1024).toFixed(2);
                 var speedMbps = (speedKbps / 1024).toFixed(2);
 
-                $('#start-test').prop('disabled', true);
+                $('#start-test').prop('disabled', false);
                 $('#result-text-test').html(speedMbps+' Mbps de desacarga');
                 // alert("Your connection speed is: \n" +speedBps + " bps\n" +speedKbps + " kbps\n" +speedMbps + " Mbps\n");
             }
