@@ -9,14 +9,6 @@
     @php
     $routes_img = [asset('intelc/img/slide2.png'), asset('intelc/img/slide3.png')];
     @endphp
-    <div class="d-none">
-        <h1 data-animate="fadeInUp" style="font-size: 1.3em" data-delay="1.2">El mejor proveedor de servicio
-            de internet de Palora en {{ date('Y') }}</h1>
-        <h2 data-animate="fadeInUp" data-delay="1.3"><span class="typed" style="font-size: 0.6em"></span></h2>
-        <ul class="list-inline" data-animate="fadeInUp" data-delay="1.4">
-            <li><a href="#planes-internet" class="btn">Consultar ofertas<i class="fas fa-caret-right"></i></a></li>
-        </ul>
-    </div>
     <section class="position-relative bg-light pb-4">
         <div id="particles_js"></div>
         <div class="">
