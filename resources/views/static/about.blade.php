@@ -9,7 +9,7 @@
                 <div class="col-11">
                     <div class="page-title position-relative pt-5 pb-5">
                         <ul class="custom-breadcrumb roboto list-unstyled mb-0 clearfix" data-animate="fadeInUp" data-delay="1.2">
-                            <li><a href="/">Ibicio</a></li>
+                            <li><a href="/">Inicio</a></li>
                             <li><i class="fas fa-angle-double-right"></i></li>
                             <li><a href="#">Acerca de Nosotros</a></li>
                         </ul>

@@ -29,7 +29,8 @@ use Maatwebsite\Excel\Facades\Excel;
 
 
 Route::get('/admins', function () {
-    dd(bcrypt('0pagob--@12'), bcrypt('000gobadm1n'));
+    // intelc@hotmail.com
+    // dd(bcrypt('382@ipplnet@'));
     return redirect()->route('auth.login.show');
     //return view('welcome');
 });
@@ -45,7 +46,7 @@ Route::get('/', function () {
     $testimonials = Testimonials::all();
     
     return view('static.home')
-        ->with('title', 'Palora')
+        ->with('title', 'INICIO')
         ->with('services', $services)
         ->with('testimonials', $testimonials)
         ->with('planesPrices', $planesPrices)
@@ -57,7 +58,7 @@ Route::get('/web/{page}', 'FrontController@index')->name('front.view.static');
 
 Route::get('front/blog/{id}', 'FrontController@showBlog')->name('front.blog.show');
 
-Route::get('front/files/{type}', 'FrontController@getFiles')->name('front.files.index');
+Route::get('front/files/{type}/{file_id}', 'FrontController@getFiles')->name('front.files.index');
 
 /**
  * Information

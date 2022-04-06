@@ -19,7 +19,7 @@ class TypesFiles extends Model
     ];
     public function groups()
     {
-        return $this->hasMany(GroupFile::class, 'type_id');
+        return $this->hasMany(GroupFile::class, 'type_id')->where('status', '<>', 'deleted');
     }
     protected $appends = ['file_url'];
     public function getFileUrlAttribute()

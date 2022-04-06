@@ -2,7 +2,7 @@
 <html class="no-js" lang="es">
 
 <head>
-    <meta charset="utf-8">
+    {{-- <meta charset="utf-8"> --}}
 
     <!--====== Title ======-->
     <title>{{ config('app.name') }} | {{ $title }}</title>
@@ -44,13 +44,14 @@
     <link rel="stylesheet" href="{{ asset('intelc/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('intelc/plugins/swiper/swiper.min.css') }}">
     <link rel="stylesheet" href="{{ asset('intelc/plugins/magnific-popup/magnific-popup.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('intelc/css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('intelc/css/responsive.css') }}">
+    <link rel="stylesheet" href="{{ asset('intelc/css/style.css') }}?v=1.2">
+    <link rel="stylesheet" href="{{ asset('intelc/css/button-whatsapp.css') }}?v=1.2">
+    <link rel="stylesheet" href="{{ asset('intelc/css/responsive.css') }}?v=1.2">
     <link rel="stylesheet" href="{{ asset('intelc/css/colors/theme-color-1.css') }}">
     <link rel="stylesheet" href="{{ asset('intelc/css/custom.css') }}">
     <!-- Color CSS -->
     <!-- Responsive CSS -->
-     <h1 style="display: none;">IntelC</h1>
+     <h1 style="display: none;">INTELC</h1>
 </head>
 
 <body class="demo-5">
@@ -63,7 +64,7 @@
 
     @yield('scripts_cdn')
 
-
+    <div class="phone-call cbh-phone cbh-green cbh-show  cbh-static" id="clbh_phone_div" style="position: fixed; bottom: 75px; right: -55px; z-index: 80;"><a target="_blank" id="WhatsApp-button" href="https://api.whatsapp.com/send/?phone=593979150254&text=Deseo saber sobre las promociones de los planes de internet&amp;phone=+593979150254" class="phoneJs" title="Mesaj Gönder!"><div class="cbh-ph-circle"></div><div class="cbh-ph-circle-fill"></div><div class="cbh-ph-img-circle1"></div></a></div>
 
     <script src="{{ asset('intelc/js/jquery-3.2.1.min.js') }}"></script>
     <script src="{{ asset('intelc/js/fontawesome-all.min.js') }}"></script>

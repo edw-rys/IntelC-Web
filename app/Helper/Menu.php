@@ -29,6 +29,25 @@ if (! function_exists('menu_files')) {
 }
 
 
+if (! function_exists('menu_files_group')) {
+    /**
+     * Create New Items Menu
+     * @param @type_code
+     */
+    function menu_files_group($type_code)
+    {
+        $files_db = TypesFiles::where('status', 'active')
+            ->With('groups')
+            ->where('system_name', $type_code)
+            ->first();
+        if ($files_db == null) {
+            return [];
+        } 
+
+        return $files_db->groups;
+    }
+}
+
 if (! function_exists('menu_admin')) {
     /**
      * Create New Items Menu

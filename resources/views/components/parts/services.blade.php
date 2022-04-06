@@ -14,7 +14,7 @@
         </div>
     </div>
 
-    <div class="services-wrap bg-white position-relative pt-5 pb-5">
+    <div class="services-wrap bg-white position-relative pt-5 pb-5" style="margin: -18rem auto 0 auto;">
         <div class="container">
             <!-- All services -->
             <div class="row">

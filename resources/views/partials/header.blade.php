@@ -11,9 +11,9 @@
                 </div>
                 <div class="col-md-3 d-none d-md-block">
                     <!-- Header social icons -->
-                    <ul class="social-icons text-right list-inline m-0">
+                    {{-- <ul class="social-icons text-right list-inline m-0">
                         <li><a href="https://www.facebook.com/intelc.sa.3" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-                    </ul>
+                    </ul> --}}
                 </div>
             </div>
         </div>

@@ -106,7 +106,7 @@ class FrontController extends Controller
     /**
      * @param $type
      */
-    public function getFiles($type)
+    public function getFiles($type, $id)
     {
         $type = TypesFiles::where('system_name', $type)->first();
 
@@ -119,6 +119,7 @@ class FrontController extends Controller
 
         $items = GroupFile::where('type_id', $type->id)
             ->where('status', 'active')
+            ->where('id', $id)
             ->paginate(5);
             
         return view($this->views->dinamic .'files')

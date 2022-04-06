@@ -3,7 +3,7 @@
     <div class="col-sm-12">
         <form action="{{ route($route, $params) }}" id="formSave" method="POST" onsubmit="return false">
             @csrf
-
+            <input type="hidden" name="type_id" value="{{ $type_id}}">
             <h3>Nuevo {{ $singular_title ?? 'ítem' }}</h3>
             <div class="card-body">
                 <div class="form-group @error('title') {{ 'is-invalid' }} @enderror">
@@ -82,11 +82,11 @@
         $('#description').val(editor.root.innerHTML);
         $('#btn-submit').attr('disable', 'true');
         $.easyAjax({
-            url: '{{route($route, $params)}}',
+            url: '{{route($route)}}',
             container: '#formSave',
             type: "POST",
             redirect: false,
-            file: true,
+            file: false,
             data: $('#formSave').serialize(), 
             success: function (response) {
                 $('#btn-submit').attr('disable', 'false');
@@ -207,3 +207,4 @@
         });
     }
 </script>
+{{-- editor.root.innerHTML = editor.root.innerHTML.replace(/<span/g, '<font').replace(/<\/span>/g, '</font>'); --}}

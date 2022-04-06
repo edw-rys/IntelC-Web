@@ -63,9 +63,10 @@ class FilesController extends Controller
         viewExist($this->views->index);
 
         $type = TypesFiles::where('system_name', $type)->first();
-        // if ($type==null) {
-            // abort(404);
-        // }
+
+        if ($type==null) {
+            abort(404);
+        }
 
         if ($type->title == null) {
             abort(404);
@@ -103,8 +104,9 @@ class FilesController extends Controller
         viewExist($this->views->create);
 
         return view($this->views->create)
-            ->with('route', 'admin.'.$this->action.'.store')
+            ->with('route', 'admin.'.$this->action.'.store-item')
             ->with('params', ['type_id' => $type_id])
+            ->with('type_id',  $type_id)
             ->with('action', $this->action);
     }
 
@@ -115,13 +117,13 @@ class FilesController extends Controller
      * @param Request $request
      * @return JsonResponse
      */
-    public function store(StoreFilesRequest $request, $type_id){
+    public function store(StoreFilesRequest $request){
         
         canAccessTo($this->permissions->create);
 
         $request->merge([
             'short_description' => $request->input('title'),
-            'type_id'           => $type_id
+            // 'type_id'           => $type_id
         ]);
 
         $item = GroupFile::create($request->all());
