@@ -123,6 +123,15 @@
         filterPans(1);
     </script>
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VMJQK5NRLJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-VMJQK5NRLJ');
+</script>
     @yield('scripts')
     @yield('script_last')
 </body>
