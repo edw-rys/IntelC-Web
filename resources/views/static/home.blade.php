@@ -13,7 +13,7 @@
         <div class="">
             <div id="particles_js"></div>
             <div class="row align-items-center w-100">
-                <div id="carouselExampleIndicators" class="carousel slide w-100 carousel-fade" data-ride="carousel">
+                <div id="carouselExampleIndicators" class="carousel slide w-100" data-ride="carousel">
                     <ol class="carousel-indicators">
                         @foreach ($routes_img as $k_i => $img_r)
                             <li data-target="#carouselExampleIndicators" data-slide-to="{{ $k_i }}"

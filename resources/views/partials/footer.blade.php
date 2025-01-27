@@ -9,7 +9,7 @@
                     <p data-animate="fadeInUp" data-delay=".05">Somos un Operador de Telecomunicaciones especializado en internet fibra óptica Gpon e internet inalámbrico con la mas alta calidad y tecnología. </p>
                     
                     <ul class="social-links list-inline mb-0">
-                        <li data-animate="fadeInUp" data-delay=".25"><a href="https://www.facebook.com/intelc.sa.3" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                        <li data-animate="fadeInUp" data-delay=".25"><a href="https://www.facebook.com/@intelce1/" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
                     </ul>
                 </div>
             </div>
@@ -27,11 +27,11 @@
                         </li>
                         <li data-animate="fadeInUp" data-delay=".15">
                             <i class="fas fa-envelope"></i>
-                            <a href="mailto:info.vpnet@yourmail.com">intelc_ecuador@hotmail.com</a>
+                            <a href="mailto:info.vpnet@yourmail.com">intelce_ecuador@hotmail.com</a>
                         </li>
                         <li data-animate="fadeInUp" data-delay=".2">
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>Dirección: Av. Cumanda entre Policia Nacional e Ibarra</span>
+                            <span>Dirección: Av. Cumanda entre Policia Nacional y Av. Ibarra</span>
                             <br>
                             <span>Edf: Pérez  oficina # 1 </span>
                             <br>
@@ -67,7 +67,7 @@
             <div class="row">
                 <!-- Copyright -->
                 <div class="col-md-5 order-last order-md-first">
-                    <p class="copyright" data-animate="fadeInDown" data-delay=".85">&copy; Copyright {{ date('Y')}} <a href="https://e-dev.com.ec" target="_blank">e-dev.com.ec</a></p>
+                    <p class="copyright" data-animate="fadeInDown" data-delay=".85">&copy; Copyright {{ date('Y')}} <a href="https://edw-dev.com" target="_blank">edw-dev.com</a></p>
                 </div>
             </div>
         </div>

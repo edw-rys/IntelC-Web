@@ -28,7 +28,7 @@
                     </li>
                     <li class="{{ isActiveRoute('blog') ? 'contact' : '' }}"><a href="https://www.arcotel.gob.ec/" target="_blank">Arcotel</a></li>
                     <li class="{{ isActiveRoute('blog') ? 'contact' : '' }}"><a href="{{ route('front.view.static', 'contact') }}">Contacto</a></li>
-                    <li class="{{ isActiveRoute('blog') ? 'contact' : '' }}"><a href="https://www.facebook.com/intelc.sa.3" target="_blank"><i style="font-size: 2em; color:blue" class="fab fa-facebook"></i></a></li>
+                    <li class="{{ isActiveRoute('blog') ? 'contact' : '' }}"><a href="https://www.facebook.com/@intelce1/" target="_blank"><i style="font-size: 2em; color:blue" class="fab fa-facebook"></i></a></li>
                     
                     
                 </ul>

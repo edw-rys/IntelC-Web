@@ -51,7 +51,7 @@
                                     </div>
                                     <div class="query-info">
                                         <h4>Consultas Básicas o Generales</h4>
-                                        <a href="mailto:intelc_ecuador@hotmail.com">intelc_ecuador@hotmail.com</a>
+                                        <a href="mailto:intelce_ecuador@hotmail.com">intelce_ecuador@hotmail.com</a>
                                     </div>
                                 </div>
                             </div>
@@ -64,7 +64,7 @@
                                     </div>
                                     <div class="query-info">
                                         <h4>Consultas de soporte técnico</h4>
-                                        <a href="mailto:intelc_ecuador@hotmail.com">intelc_ecuador@hotmail.com</a>
+                                        <a href="mailto:intelce_ecuador@hotmail.com">intelce_ecuador@hotmail.com</a>
                                     </div>
                                 </div>
                             </div>
@@ -77,7 +77,7 @@
                                     </div>
                                     <div class="query-info">
                                         <h4>Consultas publicitarias</h4>
-                                        <a href="mailto:intelc_ecuador@hotmail.com">intelc_ecuador@hotmail.com</a>
+                                        <a href="mailto:intelce_ecuador@hotmail.com">intelce_ecuador@hotmail.com</a>
                                     </div>
                                 </div>
                             </div>
@@ -90,7 +90,7 @@
                                     </div>
                                     <div class="query-info">
                                         <h4>Consultas del programa de afiliados</h4>
-                                        <a href="mailto:intelc_ecuador@hotmail.com">intelc_ecuador@hotmail.com</a>
+                                        <a href="mailto:intelce_ecuador@hotmail.com">intelce_ecuador@hotmail.com</a>
                                     </div>
                                 </div>
                             </div>

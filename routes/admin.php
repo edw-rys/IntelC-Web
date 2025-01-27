@@ -60,7 +60,8 @@ Route::group([],function(){
     /**
      * Blog
      */
-    Route::resource('blog', 'BlogController')->except(['show']);
+    Route::resource('blog', 'BlogController')->except(['show', 'update']);
+    // Route::post('blog', 'BlogController@store')->name('blog.store');
     Route::post('blog/update/{id}', 'BlogController@update')->name('blog.update');
     Route::post('blog/restore/{id}', 'BlogController@restore')->name('blog.restore');
 
@@ -72,10 +73,16 @@ Route::group([],function(){
      */
     Route::get('files/{type}', 'FilesController@index')->name('files.index');//->except(['show','update']);
     Route::get('files/create/{type_id}', 'FilesController@create')->name('files.create');//->except(['show','update']);
-    Route::post('files/{type_id}', 'FilesController@store')->name('files.store');//->except(['show','update']);
+    Route::post('files-store', 'FilesController@store')->name('files.store-item');//->except(['show','update']);
+
+    // Route::post('files-store/{type_id}', 'FilesController@store')->name('files.store-item');//->except(['show','update']);
+    //Route::post('files/{type_id}', 'FilesController@store')->name('files.store');//->except(['show','update']);
     Route::get('files/{type_id}/edit', 'FilesController@edit')->name('files.edit');//->except(['show','update']);
     Route::post('files/del-sup/{type_id}', 'FilesController@destroy')->name('files.del-sup');//->except(['show','update']);
     Route::post('files/update/{id}', 'FilesController@update')->name('files.update');
     Route::post('files/item/remove/{id}', 'FilesController@removeItem')->name('files.item.remove');
-    Route::post('files/store/upload', 'FilesController@updoadFiles')->name('files.store.upload');    
+    Route::post('files/store/upload', 'FilesController@updoadFiles')->name('files.store.upload');
+    Route::post('files/store/upload-f', 'FilesController@updoadFiles')->name('files.store.upload');    
+    Route::post('files/store/upload-i', 'FilesController@updoadFiles')->name('files.store-item.upload');  
+
 });

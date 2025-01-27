@@ -83,8 +83,8 @@ class FrontController extends Controller
             ->paginate(20);
 
         return view($this->views->dinamic .'blog')
-            ->with('title', 'Blog|IntelC')
-            ->with('meta_description', 'Blog,IntelC,Palora')
+            ->with('title', 'Blog|Intele')
+            ->with('meta_description', 'Blog,Intelce,Palora')
             ->with('items',$items);
     }
     /**
@@ -99,8 +99,8 @@ class FrontController extends Controller
             ->find($id);
 
         return view($this->views->dinamic .'show-blog')
-            ->with('title', $item->title.'|IntelC')
-            ->with('meta_description', 'Blog,IntelC,Palora')
+            ->with('title', $item->title.'|Intelce')
+            ->with('meta_description', 'Blog,Intelce,Palora')
             ->with('item',$item);
     }
     /**
