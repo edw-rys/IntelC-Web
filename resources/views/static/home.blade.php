@@ -104,6 +104,53 @@
     @include('components.parts.plants_princes')
     @include('components.parts.testimonials')
     @include('components.parts.places')
+
+    <script>
+        let appendNumber = 600;
+        let prependNumber = 1;
+        const swiper = new Swiper('.swiper', {
+            slidesPerView: 1,
+            centeredSlides: true,
+            spaceBetween: 30,
+            autoplay: {
+                delay: 3500,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                // when window width is >= 320px
+                320: {
+                    slidesPerView: 1,
+                    //spaceBetween: 20
+                },
+                // when window width is >= 480px
+                480: {
+                    slidesPerView: 2,
+                    //spaceBetween: 30
+                },
+                // when window width is >= 640px
+                950: {
+                    slidesPerView: 2,
+                    //spaceBetween: 40
+                },
+                980: {
+                    slidesPerView: 3,
+                    //spaceBetween: 40
+                }
+            }
+        });
+
+        function removeSlidePlan(index) {
+            swiper.removeSlide(index);
+        }
+    </script>
 @endsection
 
 @section('script_last')

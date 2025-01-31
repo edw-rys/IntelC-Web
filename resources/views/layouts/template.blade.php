@@ -32,6 +32,11 @@
             list-style: square inside;
             margin-left: 25px;
         }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+        }
     </style>
 
     @stack('styles_add')
@@ -49,6 +54,10 @@
     <link rel="stylesheet" href="{{ asset('intelc/css/responsive.css') }}?v=1.2">
     <link rel="stylesheet" href="{{ asset('intelc/css/colors/theme-color-1.css') }}">
     <link rel="stylesheet" href="{{ asset('intelc/css/custom.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/swiper-bundle.min.css')}}"/>
+    <link rel="stylesheet" href="{{ asset('css/skelleton.css')}}">
+    <script src="{{ asset('js/swiper-bundle.min.js')}}"></script>
+
     <!-- Color CSS -->
     <!-- Responsive CSS -->
      <h1 style="display: none;">INTELC</h1>
@@ -93,10 +102,10 @@
         }
     </script>
     <script>
-        function filterPans(type_id){
-            $('.card-plan-typeall').addClass('d-none');
-            $('.card-plan-type-'+type_id).removeClass('d-none');
-            var pricingSlider = new Swiper('.pricing-slider', {
+        function removeSlidePlan(type_id){
+            $('.type-plans-all-to-actions').addClass('d-none');
+            $('.type-plan-update-'+type_id).removeClass('d-none');
+            /*var pricingSlider = new Swiper('.pricing-slider', {
                 slidesPerView: 3,
                 loop: true,
                 centeredSlides: true,
@@ -117,10 +126,8 @@
                         slidesPerView: 1
                     }
                 }
-            });
+            });*/
         }
-        
-        filterPans(1);
     </script>
 
 <!-- Google tag (gtag.js) -->
